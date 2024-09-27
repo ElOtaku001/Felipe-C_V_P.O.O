@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('Button clicked!')">Click Me</button>
+    <button ondblclick="alert('Button double clicked!')">Double Click Me</button>
+    <button onmouseover="alert('Mouse Over!')">Hover Me</button>
+    <button onmouseout="alert('Mouse Out!')">Move Mouse Out</button>
+    <button onmousemove="alert('Mouse Moved!')">Move Mouse Here</button>
+
+    <input type="text" onkeydown="alert('Key pressed!')">
+    <input type="text" onkeyup="alert('Key released!')">
+    <input type="text" onchange="alert('Value changed!')">
+    <input type="text" onfocus="alert('Input focused!')">
+    <input type="text" onblur="alert('Input blurred!')">
+
+    <form onsubmit="alert('Form submitted!'); return false;">
+        <input type="submit" value="Submit">
+    </form>
+
+    <body onload="alert('Page loaded!')"></body>
+    <body onresize="alert('Window resized!')"></body>
+
+    <div ontouchstart="alert('Touched!')">Touch Me</div>
+    <div draggable="true" ondrag="alert('Dragging!')">Drag Me</div>
+    <div ondrop="alert('Dropped!')">Drop Here</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
