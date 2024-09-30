@@ -1,21 +1,28 @@
 console.log("page loaded...");
-function playVideo(secondaryVideo, textoId) {
-    var mainVideo = document.getElementById("mainVideo"); // Selecciona el video principal
-    var temp = mainVideo.src;
-    var textoSecundario = document.getElementById(textoId);
-    var textoPrincipal = document.getElementById("texto");
 
-    var tempTexto = textoSecundario.innerText;
-    textoSecundario.innerText = textoPrincipal.innerText;
-    textoPrincipal.innerText = tempTexto;
-
-    // Cambia el src del video principal al del video secundario
+function playVideo(secondaryVideo){
+    var mainVideo = document.getElementById("mainVideo");
+    var videoTitle = secondaryVideo.parentElement.querySelector(".video-title").textContent;
+    var principalTitle = document.getElementById("title-principal");
+    
+    var tempVideoSrc = mainVideo.src;
+    var tempTitle = principalTitle.textContent;
+    
     mainVideo.src = secondaryVideo.src;
-    mainVideo.play(); // Reproduce el nuevo video en el video principal
-    // Cambia el src del video secundario al que tenía el video principal
-    secondaryVideo.src = temp;
-}
-function pauseVideo() {
+    mainVideo.play();
 
-    mainVideo.pause(); // Reproduce el video original en el video principal
+    secondaryVideo.src = tempVideoSrc;
+
+    principalTitle.textContent = videoTitle;
+    secondaryVideo.parentElement.querySelector(".video-title").textContent = tempTitle;
+}
+
+function pauseVideo(secondaryVideo){
+    var mainVideo = document.getElementById("mainVideo")
+
+    var tempSrc = secondaryVideo.src;
+
+    secondaryVideo.src = mainVideo.src;
+    mainVideo.src = tempSrc;
+    mainVideo.play();
 }
